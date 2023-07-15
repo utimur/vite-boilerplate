@@ -1,5 +1,7 @@
 import {useState} from "react";
-import {Link,Outlet} from "react-router-dom";
+import {Link, Routes, Route} from "react-router-dom";
+import {About} from "./pages/About";
+import {Welcome} from "./pages/Welcome";
 
 export const App = () => {
     const [count, setCount] = useState(0)
@@ -18,7 +20,10 @@ export const App = () => {
                 <Link to={'welcome'}>welcome</Link>
             </div>
 
-            <Outlet />
+            <Routes>
+                <Route path="/about" element={<About />} />
+                <Route path="/welcome" element={<Welcome />} />
+            </Routes>
         </div>
     );
 };
